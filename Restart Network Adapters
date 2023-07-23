@@ -1,0 +1,8 @@
+# This restarts network adapters. THIS REQUIRES YOU TO RUN POWERSHELL AS ADMIN.
+
+$StopWatch = [system.diagnostics.stopwatch]::startNew()
+
+Get-NetAdapter | Restart-NetAdapter 
+
+[int]$Elapsed = $StopWatch.Elapsed.TotalSeconds
+"Succesfully restarted local network adapters, taking $Elapsed seconds"
